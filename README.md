@@ -13,6 +13,12 @@ Exploratory Data Analysis on The Office
 ## Data
 Scraped data from IMDb
 
+**Sample Data**
+| EpisodeTitle | About | Ratings | Votes | Viewership | Duration | Date | GuestStars | Director | Writers |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Pilot | The premiere episode introduces the boss and staff of the Dunder-Mifflin Paper Company in Scranton, Pennsylvania in a documentary about the workplace. | 7.5 | 4936 | 11.2 | 23 | 24 March 2005 | Ken Kwapis | Ricky Gervais \| Stephen Merchant and Greg Daniels |
+
+
 ## Questions
 ### How do IMDb ratings change over the seasons?
 
