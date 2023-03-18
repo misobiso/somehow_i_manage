@@ -1,4 +1,4 @@
-# Somehow I Manage
+# Somehow I Manage 💼
 Exploratory Data Analysis on The Office
 
 ## Goals
