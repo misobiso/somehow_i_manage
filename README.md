@@ -18,6 +18,8 @@ Scraped data from IMDb
 
 ![image](https://user-images.githubusercontent.com/128242031/226137863-de3a9696-bc69-4d0d-a46a-4d5372ddff56.png)
 
+> Sudden drop from season 7 to season 8 is likely caused by Michael leaving The Office
+
 ### Which episodes had the highest and lowest IMDb ratings?
 
 ![image](https://user-images.githubusercontent.com/128242031/226138589-3bc9117e-0481-4bd3-9db2-4b003897ed41.png)
@@ -47,6 +49,8 @@ _*Season 8 Get the Girl - Andy goes to Tallahassee to tell Erin that he loves he
 _*Season 5 Stress Relief - Dwight's too-realistic fire alarm gives Stanley a heart attack. When he returns, Michael learns that he is the cause of Stanley's stress. To remedy the situation, he forces the office to throw a roast for him._
 
 _*Season 9 Paper Airplane - The employees hold a paper airplane competition, Andy gets an acting role in a workplace safety video, and Jim and Pam's marriage tensions continue to build._
+
+> Stress Relief has a large increase in viewership likely due to iconic scenes such as the "Fire Drill" and "First Aid Fail/Staying Alive CPR"
 
 ### How Does viewership correlate with IMDb ratings?
 
