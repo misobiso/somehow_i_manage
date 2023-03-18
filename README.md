@@ -2,11 +2,11 @@
 Exploratory Data Analysis on The Office
 
 ## Goals
-1) See how quickly I can perform EDA with no data science background
+1) See how quickly I can perform EDA with a data science background
 2) Exposure to data visualization library
     - Matplotlib
 3) Understand different model types
-    -  Latent Dirichlet Allocation
+    - Latent Dirichlet Allocation
     - Sentiment Analysis
     - Cluster Analysis
 
