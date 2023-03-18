@@ -50,7 +50,7 @@ _*Season 5 Stress Relief - Dwight's too-realistic fire alarm gives Stanley a hea
 
 _*Season 9 Paper Airplane - The employees hold a paper airplane competition, Andy gets an acting role in a workplace safety video, and Jim and Pam's marriage tensions continue to build._
 
-> Stress Relief has a large increase in viewership likely due to iconic scenes such as the "Fire Drill" and "First Aid Fail/Staying Alive CPR"
+> Stress Relief had a large increase in viewership likely due to iconic scenes such as the "Fire Drill" and "First Aid Fail/Staying Alive CPR"
 
 ### How Does viewership correlate with IMDb ratings?
 
