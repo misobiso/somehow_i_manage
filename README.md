@@ -9,6 +9,8 @@ Exploratory Data Analysis on The Office
     - Latent Dirichlet Allocation
     - Sentiment Analysis
     - Cluster Analysis
+    - Principal Component Analysis
+    - K-means Clustering
 
 ## Data
 Scraped data from IMDb
@@ -118,7 +120,7 @@ Keep in mind that LDA topics are not explicitly defined, and their interpretatio
 
 ![image](https://user-images.githubusercontent.com/128242031/226140392-10882df2-2130-4e7b-8b32-cc8f3799d3bd.png)
 
-### Use the sentiment analysis tool to determine if episodes with positive or negative sentiment in the summaries have an impact on ratings or viewership?
+### Use the sentiment analysis tool to determine if episodes with positive or negative sentiment in the summaries have an impact on ratings or viewership
 
 1) We used a tool called "SentimentIntensityAnalyzer" from nltk to measure the sentiment of the episode summaries. Sentiment is a way to determine if the text has a positive, negative, or neutral tone.
 
@@ -142,3 +144,86 @@ This negative correlation coefficient indicates that there is a very weak negati
 This negative correlation coefficient also indicates a very weak negative relationship between sentiment scores and viewership. This means that when the sentiment score is higher (more positive), the viewership tends to be slightly lower, and vice versa. But again, the relationship is very weak, so it's not a strong or reliable predictor.
 
 In both cases, the correlation coefficients are close to 0, which means there is **little to no relationship between the variables**. In simpler terms, the sentiment scores of the episode summaries don't seem to have a significant impact on either the IMDb ratings or the viewership of the episodes.
+
+### Can we use clustering algorithms (e.g., K-means) to group episodes based on their features (e.g., ratings, viewership, topics, sentiment) and identify common patterns among the clusters?
+
+Steps
+1) Prepared the features: We combined IMDb ratings, viewership, topics, and sentiment scores into a single DataFrame, where each row represents an episode, and each column represents one of the features.
+
+2) Scaled the features using StandardScaler: Scaling is the process of transforming the data so that all features have the same importance. Since features like ratings and viewership have different ranges, they need to be scaled to give equal weight to all features. We used the StandardScaler, which standardizes the features by subtracting the mean and dividing by the standard deviation. This ensures that all features have a mean of 0 and a standard deviation of 1.
+
+3) Reduced dimensions with PCA: Principal Component Analysis (PCA) is a technique used to reduce the dimensions of the data while preserving most of the information. It creates new features called "principal components" by combining the original features in a way that captures most of the variation in the data. By reducing the dimensions, we can visualize and analyze the data more easily. In our case, we transformed the multi-dimensional data into a two-dimensional space.
+
+4) Applied K-means clustering: K-means is a clustering algorithm that groups data points (in our case, episodes) based on their similarity across the given features. It starts by randomly initializing a set number of cluster centers (we chose 3) and assigns each data point to the nearest center. Then, it iteratively updates the centers by calculating the mean of all data points in each cluster and reassigning data points to the nearest updated center. The algorithm stops when the cluster assignments no longer change or a maximum number of iterations is reached.
+
+5)Evaluated the clusters: We analyzed the clusters by calculating the average IMDb ratings, viewership, and sentiment scores for each cluster. This allowed us to identify the common patterns among the clusters.
+
+```
+This output shows that the episodes have been divided into three clusters based on their features (ratings, viewership, topics, and sentiment). Here's a summary of each cluster:
+
+Cluster 0:
+
+Number of episodes: 48
+Average IMDb rating: 8.35
+Average viewership: 7.07 million
+Average sentiment score: -0.0048
+Cluster 1:
+
+Number of episodes: 104
+Average IMDb rating: 8.17
+Average viewership: 7.26 million
+Average sentiment score: 0.0359
+Cluster 2:
+
+Number of episodes: 36
+Average IMDb rating: 8.28
+Average viewership: 7.45 million
+Average sentiment score: -0.0179
+
+Cluster 0 has the highest average IMDb rating and the lowest average viewership, with a slightly negative average sentiment score. Cluster 1 has the largest number of episodes, with the lowest average IMDb rating but slightly higher average viewership than Cluster 0, and a slightly positive average sentiment score. Cluster 2 has the smallest number of episodes, with a relatively high average IMDb rating and the highest average viewership, along with a negative average sentiment score.
+
+These clusters can help you identify any patterns or relationships between the episodes' features. For example, Cluster 0 has the highest IMDb ratings but lower viewership, while Cluster 2 has a high IMDb rating and the highest viewership. Cluster 1, with the most episodes, has the lowest IMDb rating but a slightly positive sentiment score. This information can help you understand how different aspects of the episodes are related and inform further analysis or decision-making based on your interests.
+```
+
+6) Visualized the clusters: We created a scatter plot to visualize the clusters in the two-dimensional space created by PCA. This plot helps us see the groups of episodes and their separation based on the given features.
+
+![image](https://user-images.githubusercontent.com/128242031/226153064-e7ba19e9-f2e0-4368-9fbb-2854d83b5d4c.png)
+
+> By following these steps, we were able to group episodes based on their features and identify common patterns among the clusters. The key steps, scaling the features, PCA, and K-means clustering, ensure that our analysis is accurate, easy to interpret, and captures meaningful patterns in the data.
+
+Random 3 episodes in the clusters
+
+```
+Cluster 0 Episodes:
+-------------------
+Season 4 - Goodbye, Toby
+About: Michael throws an extravagant going-away party for Toby, and falls in love with the woman who is replacing him. Jim plans to propose to Pam at the party, but gets out-staged. Back at corporate, Ryan is arrested for fraud.
+
+Season 5 - Casual Friday
+About: Michael returns to Dunder Mifflin and brings Ryan and Pam in as salespeople, but the existing salespeople demand that Michael return the clients they stole back to them. Meanwhile, some employees take the idea of Casual Friday too far.
+
+Season 8 - Angry Andy
+About: Andy and Erin return to Dunder Mifflin, only to discover that Nellie has taken his job and office and refuses to give them up. Meanwhile, Ryan becomes jealous after Pam tries to play matchmaker for Kelly.
+
+Cluster 1 Episodes:
+-------------------
+Season 1 - Hot Girl
+About: Michael is just one of the many male staff who start vying for the attention of an attractive saleswoman in the office.
+
+Season 2 - The Injury
+About: Michael's "injury" from a George Foreman Grill distracts the staff from Dwight, the one with the real injury.
+
+Season 3 - Branch Closing
+About: When Jan tells Michael that the Scranton Branch will be shutting down, Michael strives to keep his staff's spirits up. Meanwhile, everyone privately begins to envision how their lives will change in the aftermath.
+
+Cluster 2 Episodes:
+-------------------
+Season 2 - Valentine's Day
+About: When Michael visits Dunder Mifflin corporate headquarters in New York on Valentine's Day, he and Jan are both in for a surprise. Meanwhile, back in Scranton, the office staff celebrates Valentine's Day grade school style.
+
+Season 7 - Threat Level Midnight
+About: Michael finally finishes his movie "Threat Level Midnight" and screens it for his employees at Dunder Mifflin, but Holly is less than enthusiastic for his finished product.
+
+Season 9 - Suit Warehouse
+About: Dwight and Clark pose as father and son to get an account, Darryl goes for an interview with Jim's new business, and everybody in the office goes crazy over a new espresso machine.
+```
