@@ -154,9 +154,15 @@ Steps
 
 3) Reduced dimensions with PCA: Principal Component Analysis (PCA) is a technique used to reduce the dimensions of the data while preserving most of the information. It creates new features called "principal components" by combining the original features in a way that captures most of the variation in the data. By reducing the dimensions, we can visualize and analyze the data more easily. In our case, we transformed the multi-dimensional data into a two-dimensional space.
 
+    Imagine you have a dataset with multiple features (columns), and these features are spread across a multi-dimensional space. Principal Component        Analysis (PCA) is a technique that helps you reduce the number of dimensions while keeping as much information as possible from the original dataset.
+
+    The first principal component (PC1) is a new dimension that captures the most variance (or the most significant pattern) in the dataset. The second     principal component (PC2) is another new dimension, orthogonal (or perpendicular) to the first one, that captures the second most variance in the       dataset, and so on.
+
+    By using PCA and reducing the dimensions, you can simplify the dataset and visualize it more easily, for example, on a two-dimensional scatter plot.    Keep in mind that some information is lost during the dimensionality reduction process, but PCA tries to minimize that loss by preserving the most      important patterns.
+
 4) Applied K-means clustering: K-means is a clustering algorithm that groups data points (in our case, episodes) based on their similarity across the given features. It starts by randomly initializing a set number of cluster centers (we chose 3) and assigns each data point to the nearest center. Then, it iteratively updates the centers by calculating the mean of all data points in each cluster and reassigning data points to the nearest updated center. The algorithm stops when the cluster assignments no longer change or a maximum number of iterations is reached.
 
-5)Evaluated the clusters: We analyzed the clusters by calculating the average IMDb ratings, viewership, and sentiment scores for each cluster. This allowed us to identify the common patterns among the clusters.
+5) Evaluated the clusters: We analyzed the clusters by calculating the average IMDb ratings, viewership, and sentiment scores for each cluster. This allowed us to identify the common patterns among the clusters.
 
 ```
 This output shows that the episodes have been divided into three clusters based on their features (ratings, viewership, topics, and sentiment). Here's a summary of each cluster:
