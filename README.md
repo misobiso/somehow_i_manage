@@ -167,12 +167,14 @@ Number of episodes: 48
 Average IMDb rating: 8.35
 Average viewership: 7.07 million
 Average sentiment score: -0.0048
+
 Cluster 1:
 
 Number of episodes: 104
 Average IMDb rating: 8.17
 Average viewership: 7.26 million
 Average sentiment score: 0.0359
+
 Cluster 2:
 
 Number of episodes: 36
